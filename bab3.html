@@ -1,0 +1,301 @@
+<p id="teks">Halo Dunia</p>
+<div class="kotak">Ini kotak</div>
+
+<script>
+  // Mengambil element berdasarkan ID
+  let paragraf = document.getElementById('teks')
+  console.log(paragraf.textContent) // "Halo Dunia"
+
+  // Mengambil element berdasarkan class
+  let kotak = document.querySelector('.kotak')
+  console.log(kotak.textContent) // "Ini kotak"
+</script>
+
+<h1 id="judul">Judul Lama</h1>
+
+<script>
+  let judul = document.getElementById('judul')
+  console.log('Sebelum:', judul.textContent) // "Judul Lama"
+
+  // Mengubah teks
+  judul.textContent = 'Judul Baru!'
+  console.log('Sesudah:', judul.textContent) // "Judul Baru!"
+</script>
+
+<div id="kotak1">Kotak Merah</div>
+
+<script>
+  let kotak1 = document.getElementById('kotak1')
+
+  // Mengubah warna background
+  kotak1.style.backgroundColor = 'blue'
+
+  // Mengubah ukuran
+  kotak1.style.width = '200px'
+  kotak1.style.height = '100px'
+
+  // Mengubah warna teks
+  kotak1.style.color = 'white'
+</script>
+
+<div id="pesan">Ini pesan rahasia!</div>
+
+<script>
+  let pesan = document.getElementById('pesan')
+
+  // Menyembunyikan element
+  pesan.style.display = 'none'
+  console.log('Pesan disembunyikan')
+
+  // Menampilkan kembali setelah 2 detik
+  setTimeout(() => {
+    pesan.style.display = 'block'
+    console.log('Pesan ditampilkan kembali')
+  }, 2000)
+</script>
+
+<ul id="daftar">
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+
+<script>
+  let daftar = document.getElementById('daftar')
+
+  // Membuat element baru
+  let itemBaru = document.createElement('li')
+  itemBaru.textContent = 'Item 3'
+
+  // Menambahkan ke daftar
+  daftar.appendChild(itemBaru)
+  console.log('Item baru ditambahkan')
+</script>
+
+<style>
+  .highlight {
+    background-color: yellow;
+    font-weight: bold;
+  }
+  .besar {
+    font-size: 24px;
+  }
+</style>
+
+<p id="teks1">Teks normal</p>
+
+<script>
+  let teks = document.getElementById('teks1')
+
+  // Menambah class
+  teks.classList.add('highlight')
+  teks.classList.add('besar')
+
+  console.log('Class ditambahkan')
+</script>
+
+<img id="gambar" src="gambar1.jpg" alt="Gambar 1" />
+<a id="link" href="https://google.com">Link Google</a>
+
+<script>
+  let gambar = document.getElementById('gambar')
+  let link = document.getElementById('link')
+
+  // Mengubah src gambar
+  gambar.src = 'gambar2.jpg'
+  gambar.alt = 'Gambar 2'
+
+  // Mengubah href link
+  link.href = 'https://youtube.com'
+  link.textContent = 'Link YouTube'
+</script>
+
+<div class="card">Card 1</div>
+<div class="card">Card 2</div>
+<div class="card">Card 3</div>
+
+<script>
+  // Mengambil semua element dengan class 'card'
+  let cards = document.querySelectorAll('.card')
+
+  // Mengubah semua card
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].style.backgroundColor = 'lightblue'
+    cards[i].style.padding = '10px'
+    cards[i].style.margin = '5px'
+  }
+
+  console.log('Semua card diubah')
+</script>
+
+<button id="tombol">Klik Saya!</button>
+<p id="hasil"></p>
+
+<script>
+  let tombol = document.getElementById('tombol')
+  let hasil = document.getElementById('hasil')
+
+  tombol.addEventListener('click', function () {
+    hasil.textContent = 'Tombol diklik!'
+    console.log('Button diklik')
+  })
+</script>
+
+<input type="text" id="nama" placeholder="Ketik nama..." />
+<p id="output"></p>
+
+<script>
+  let input = document.getElementById('nama')
+  let output = document.getElementById('output')
+
+  input.addEventListener('input', function () {
+    let nilai = input.value
+    output.textContent = 'Halo ' + nilai + '!'
+  })
+</script>
+
+<div id="kotak2" style="width:200px; height:200px; background:lightblue;">
+  Hover me!
+</div>
+
+<script>
+  let kotak2 = document.getElementById('kotak2')
+
+  // Mouse masuk
+  kotak2.addEventListener('mouseenter', function () {
+    kotak2.style.backgroundColor = 'lightgreen'
+    kotak2.textContent = 'Mouse masuk!'
+  })
+
+  // Mouse keluar
+  kotak2.addEventListener('mouseleave', function () {
+    kotak2.style.backgroundColor = 'lightblue'
+    kotak2.textContent = 'Hover me!'
+  })
+</script>
+
+<form id="form">
+  <input type="text" id="nama2" placeholder="Nama2" required />
+  <button type="submit">Submit</button>
+</form>
+<p id="hasil2"></p>
+
+<script>
+  let form = document.getElementById('form')
+  let hasil1 = document.getElementById('hasil2')
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault() // Mencegah reload halaman
+
+    let nama2 = document.getElementById('nama2').value
+    hasil1.textContent = 'Form submitted dengan nama: ' + nama2
+  })
+</script>
+
+<input type="text" id="keyboard" placeholder="Tekan tombol..." />
+<p id="info"></p>
+
+<script>
+  let input3 = document.getElementById('keyboard')
+  let info = document.getElementById('info')
+
+  input3.addEventListener('keydown', function (event) {
+    info.textContent = 'Tombol ditekan: ' + event.key
+  })
+
+  input3.addEventListener('keyup', function (event) {
+    info.textContent = 'Tombol dilepas: ' + event.key
+  })
+</script>
+
+<div>
+  <h2 id="counter">0</h2>
+  <button id="plus">+</button>
+  <button id="minus">-</button>
+  <button id="reset">Reset</button>
+</div>
+
+<script>
+  let counter = document.getElementById('counter')
+  let plus = document.getElementById('plus')
+  let minus = document.getElementById('minus')
+  let reset = document.getElementById('reset')
+
+  let count = 0
+
+  plus.addEventListener('click', function () {
+    count = count + 1
+    counter.textContent = count
+  })
+
+  minus.addEventListener('click', function () {
+    count = count - 1
+    counter.textContent = count
+  })
+
+  reset.addEventListener('click', function () {
+    count = 0
+    counter.textContent = count
+  })
+</script>
+
+<div id="kotak4" style="width:200px; height:200px; background:red;">
+  Kotak Warna
+</div>
+<br />
+<button id="merah">Merah</button>
+<button id="hijau">Hijau</button>
+<button id="biru">Biru</button>
+
+<script>
+  let kotak4 = document.getElementById('kotak4')
+  let merah = document.getElementById('merah')
+  let hijau = document.getElementById('hijau')
+  let biru = document.getElementById('biru')
+
+  merah.addEventListener('click', function () {
+    kotak4.style.backgroundColor = 'red'
+  })
+
+  hijau.addEventListener('click', function () {
+    kotak4.style.backgroundColor = 'green'
+  })
+
+  biru.addEventListener('click', function () {
+    kotak4.style.backgroundColor = 'blue'
+  })
+</script>
+
+<div>
+  <input type="text" id="taskInput" placeholder="Tugas baru..." />
+  <button id="addTask">Tambah</button>
+  <ul id="taskList"></ul>
+</div>
+
+<script>
+  let taskInput = document.getElementById('taskInput')
+  let addTask = document.getElementById('addTask')
+  let taskList = document.getElementById('taskList')
+
+  addTask.addEventListener('click', function () {
+    let taskText = taskInput.value
+
+    if (taskText !== '') {
+      // Membuat element baru
+      let li = document.createElement('li')
+      li.textContent = taskText
+
+      // Menambah ke daftar
+      taskList.appendChild(li)
+
+      // Kosongkan input
+      taskInput.value = ''
+    }
+  })
+
+  // Enter key support
+  taskInput.addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+      addTask.click()
+    }
+  })
+</script>
