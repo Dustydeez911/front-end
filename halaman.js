@@ -16,7 +16,7 @@ const taskList = document.getElementById("taskList");
 const loadingEl = document.getElementById("loading");
 
 
-// Simulasi proses async (tambah / hapus)
+
 function simulasiProses(pesan, delay = 1000) {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -90,16 +90,12 @@ function renderTugas() {
   });
 }
 
-// ==============================
-// UTILITAS
-// ==============================
+
 function tampilkanLoading(status) {
   loadingEl.style.display = status ? "block" : "none";
 }
 
-// ==============================
-// EVENT LISTENER
-// ==============================
+
 addBtn.addEventListener("click", tambahTugas);
 taskInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") tambahTugas();
